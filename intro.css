@@ -1,0 +1,146 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: cursive;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fef3f5; 
+    color: #333;
+}
+
+header {
+    background-color: #c04b5c; 
+    color: #fcfafa;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 2;
+    font-size: 30px;
+    position: sticky;
+}
+
+.container {
+    display: flex;
+    max-width: 960px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 240px;
+    padding: 20px;
+    background-color: #f7dedf;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #555;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #c04b5c; 
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 1px solid #f0e0e1; 
+}
+
+h1, h2 {
+    color: #c04b5c;
+}
+
+h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        order: 2;
+    }
+
+    main {
+        order: 1;
+    }
+}
+
+.icon-hormonal-imbalance::before {
+    content: "🔄";
+    margin-right: 10px;
+}
+
+.icon-pcos-pcod::before {
+    content: "⚕️"; 
+    margin-right: 10px;
+}
+
+.icon-diagnosis::before {
+    content: "🔍"; 
+    margin-right: 10px;
+}
+
+.icon-menstrual-cycle::before {
+    content: "🩸";
+    margin-right: 10px;
+}
+
+.icon-video::before {
+    content: "🎥";
+    margin-right: 10px;
+} 
+
+.infographic {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.infographic img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
