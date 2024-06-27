@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolution of Menstrual Products</title>
+    <!-- External CSS for Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        button {
+            background-color: #c2185b;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: #a0164b;
+            transform: scale(1.05);
+        }
+        h1, h2 {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: #c2185b;
+            text-align: center;
+        }
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .event {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #c2185b;
+            background-color: #fff;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            max-width: 300px;
+            position: relative;
+        }
+        .event:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+        .event::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 50px;
+            height: 2px;
+            background-color: #c2185b;
+            transform: translateY(-50%);
+            transition: width 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .event:hover::after,
+        .event.active::after {
+            width: calc(100% - 20px);
+            opacity: 1;
+        }
+        .event:last-child::after {
+            display: none;
+        }
+        .event h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        .event .icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #c2185b;
+        }
+        .event .pros-cons {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .rating i {
+            font-size: 28px;
+            color: #c2185b;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .rating i:hover,
+        .rating i.active {
+            color: #d8e91e;
+            transform: scale(1.2);
+        }
+        .timeline-heading {
+            text-align: center;
+            margin: 40px auto;
+            color: #c2185b;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Modal Styling */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 9999; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="fade-in">Evolution of Menstrual Products</h1>
+
+    <h2 class="timeline-heading fade-in">Evolution of Pads</h2>
+    <div class="timeline fade-in" id="padsTimeline">
+        <div class="event">
+            <i class="fas fa-tint icon"></i>
+            <h2>Before Modern Products</h2>
+            <p class="pros-cons"><strong>Pros:</strong> Reusable, Natural<br><strong>Cons:</strong> Uncomfortable, Ineffective</p>
+            <div class="rating">
+                <i class="far fa-star" onclick="rateStars(this, 0)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 1)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 2)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 3)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 4)"></i>
+            </div>
+            <button onclick="openModal('Before Modern Products')">Read More</button>
+        </div>
+        <div class="event">
+            <i class="fas fa-tint icon"></i>
+            <h2>Introduction of Pads</h2>
+            <p class="pros-cons"><strong>Pros:</strong> Convenient, Absorbent<br><strong>Cons:</strong> Bulky, Non-biodegradable</p>
+            <div class="rating">
+                <i class="far fa-star" onclick="rateStars(this, 0)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 1)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 2)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 3)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 4)"></i>
+            </div>
+            <button onclick="openModal('Introduction of Pads')">Read More</button>
+        </div>
+        <div class="event">
+            <i class="fas fa-tint icon"></i>
+            <h2>Rise of Menstrual Cups</h2>
+            <p class="pros-cons"><strong>Pros:</strong> Eco-friendly, Reusable<br><strong>Cons:</strong> Learning curve, Initial cost</p>
+            <div class="rating">
+                <i class="far fa-star" onclick="rateStars(this, 0)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 1)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 2)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 3)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 4)"></i>
+            </div>
+            <button onclick="openModal('Rise of Menstrual Cups')">Read More</button>
+        </div>
+    </div>
+
+    <h2 class="timeline-heading fade-in">Evolution of Tampons</h2>
+    <div class="timeline fade-in" id="tamponsTimeline">
+        <div class="event">
+            <i class="fas fa-tint icon"></i>
+            <h2>Introduction of Tampons</h2>
+            <p class="pros-cons"><strong>Pros:</strong> Convenient, Discreet<br><strong>Cons:</strong> Risk of TSS, Environmental impact</p>
+            <div class="rating">
+                <i class="far fa-star" onclick="rateStars(this, 0)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 1)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 2)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 3)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 4)"></i>
+            </div>
+            <button onclick="openModal('Introduction of Tampons')">Read More</button>
+        </div>
+        <div class="event">
+            <i class="fas fa-tint icon"></i>
+            <h2>Evolution of Tampon Materials</h2>
+            <p class="pros-cons"><strong>Pros:</strong> Comfortable, Customizable<br><strong>Cons:</strong> Environmental impact, Disposal challenges</p>
+            <div class="rating">
+                <i class="far fa-star" onclick="rateStars(this, 0)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 1)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 2)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 3)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 4)"></i>
+            </div>
+            <button onclick="openModal('Evolution of Tampon Materials')">Read More</button>
+        </div>
+        <div class="event">
+            <i class="fas fa-tint icon"></i>
+            <h2>Introduction of Applicator Tampons</h2>
+            <p class="pros-cons"><strong>Pros:</strong> Hygienic, Convenient<br><strong>Cons:</strong> Plastic waste, Costly</p>
+            <div class="rating">
+                <i class="far fa-star" onclick="rateStars(this, 0)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 1)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 2)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 3)"></i>
+                <i class="far fa-star" onclick="rateStars(this, 4)"></i>
+            </div>
+            <button onclick="openModal('Introduction of Applicator Tampons')">Read More</button>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalContent"></p>
+        </div>
+    </div>
+
+    <button onclick="submitRatings()" class="fade-in">Submit Ratings</button>
+
+    <script>
+        function openModal(title) {
+            const modal = document.getElementById('myModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modal.style.display = 'block';
+            modalTitle.textContent = title;
+
+            switch (title) {
+                case 'Before Modern Products':
+                    modalContent.innerHTML = "Before modern pads, women used natural materials like cloth or wool. These were reusable but often uncomfortable and not very effective.";
+                    break;
+                case 'Introduction of Pads':
+                    modalContent.innerHTML = "Modern pads were introduced in the early 20th century, made from absorbent materials like cellulose and cotton. They provided more convenience but were initially bulky and uncomfortable.";
+                    break;
+                case 'Rise of Menstrual Cups':
+                    modalContent.innerHTML = "Menstrual cups gained popularity as an eco-friendly alternative in the late 20th century. Made from medical-grade silicone, they are reusable and reduce waste, though they require learning to use properly.";
+                    break;
+                case 'Introduction of Tampons':
+                    modalContent.innerHTML = "Tampons became popular in the mid-20th century for their convenience and discreetness. They offer freedom of movement but come with risks like Toxic Shock Syndrome.";
+                    break;
+                case 'Evolution of Tampon Materials':
+                    modalContent.innerHTML = "Tampon materials have evolved to provide better comfort and absorbency. They are available in various sizes and absorbency levels to suit different needs, although their disposal can impact the environment.";
+                    break;
+                case 'Introduction of Applicator Tampons':
+                    modalContent.innerHTML = "Applicator tampons were introduced to make insertion easier and more hygienic. They offer convenience but raise concerns about the environmental impact of disposable plastic applicators.";
+                    break;
+                default:
+                    modalContent.innerHTML = "Additional information can be added here.";
+                    break;
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        }
+
+        function submitRatings() {
+            const padsRatings = document.querySelectorAll('#padsTimeline .rating i.active').length;
+            const tamponsRatings = document.querySelectorAll('#tamponsTimeline .rating i.active').length;
+
+            const prediction = padsRatings > tamponsRatings 
+                ? "Pads are predicted to be the better option for you."
+                : tamponsRatings > padsRatings 
+                ? "Tampons are predicted to be the better option for you."
+                : "Both pads and tampons seem equally suitable for you.";
+
+            alert(prediction);
+        }
+
+        function rateStars(clickedStar, index) {
+            const stars = clickedStar.parentNode.querySelectorAll('i');
+            stars.forEach((star, i) => {
+                star.classList.toggle('active', i <= index);
+            });
+        }
+    </script>
+</body>
+</html>
