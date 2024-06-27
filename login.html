@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LunaWellness - Login and Signup</title>
+        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script
+            src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+        <script>
+        (function() {
+            emailjs.init("urpc3kn68WS97JelD");
+        })();
+    </script>
+        <script src="login.js" defer></script>
+    </head>
+    <body>
+        <div class="login-container">
+            <div class="branding">
+                <h1><i class="fas fa-venus-mars"></i> LunaWellness</h1>
+                <p>Empowering wellness through every cycle</p>
+            </div>
+
+            <div id="loginSection">
+                <h2>Login to LunaWellness</h2>
+                <div class="form-group">
+                    <label for="username"><i class="fas fa-user"></i>
+                        Username:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i>
+                        Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i>
+                        Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <button onclick="login()"><i class="fas fa-sign-in-alt"></i>
+                    Login</button>
+                <p id="loginMessage"></p>
+                <button class="toggle-form" onclick="toggleForm()">Sign
+                    Up</button>
+            </div>
+
+            <div id="signupSection" style="display: none;">
+                <h2>Sign Up for Period Wellness</h2>
+                <div class="form-group">
+                    <label for="newUsername"><i class="fas fa-user-plus"></i>
+                        New Username:</label>
+                    <input type="text" id="newUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword"><i class="fas fa-key"></i> New
+                        Password:</label>
+                    <input type="password" id="newPassword" required>
+                </div>
+                <button onclick="signup()"><i class="fas fa-user-plus"></i> Sign
+                    Up</button>
+                <p id="signupMessage"></p>
+                <button class="toggle-form"
+                    onclick="toggleForm()">Login</button>
+            </div>
+        </div>
+
+        <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const email = document.getElementById('email').value;
+
+            if (!username || !password || !email) {
+                document.getElementById('loginMessage').textContent =
+                    'Please fill in complete information';
+                return;
+            }
+
+            document.getElementById('loginMessage').textContent =
+                'Login successful';
+
+            const templateParams = {
+                username: username,
+                email: email,
+                message:
+                    'Welcome to Period Wellness! You will receive notifications about your upcoming periods and health tips.'
+            };
+
+            emailjs
+                .send('service_6n9y5cj', 'template_lxgklg6', templateParams)
+                .then(
+                    response => {
+                        console.log(
+                            'Email sent successfully!',
+                            response.status,
+                            response.text
+                        );
+                    },
+                    error => {
+                        console.error('Failed to send email.', error);
+                    }
+                );
+        }
+
+        function signup() {
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+
+            if (!newUsername || !newPassword) {
+                document.getElementById('signupMessage').textContent =
+                    'Please fill in complete information';
+                return;
+            }
+
+            const newUser = {
+                username: newUsername,
+                password: newPassword
+            };
+
+            document.getElementById('signupMessage').textContent =
+                User `${newUsername} signed up successfully`;
+
+        }
+
+        function toggleForm() {
+            var loginSection = document.getElementById('loginSection');
+            var signupSection = document.getElementById('signupSection');
+
+            if (loginSection.style.display === 'none') {
+                loginSection.style.display = 'block';
+                signupSection.style.display = 'none';
+            } else {
+                loginSection.style.display = 'none';
+                signupSection.style.display = 'block';
+            }
+        }
+    </script>
+    </body>
+</html>
