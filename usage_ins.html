@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Product Usage Instructions</title>
+    <link rel="stylesheet" href="usage_ins.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <h1>Menstrual Product Usage Instructions</h1>
+        <div class="language-selector">
+            <label for="language">Language:</label>
+            <select id="language" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#tampons" onclick="showSection('tampons')">Tampons</a></li>
+            <li><a href="#menstrual-cups" onclick="showSection('menstrual-cups')">Menstrual Cups</a></li>
+            <li><a href="#pads" onclick="showSection('pads')">Pads</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="tampons" class="content-section">
+            <h2 data-lang-en="How to Use Tampons" data-lang-es="Cómo usar tampones" data-lang-fr="Comment utiliser les tampons">How to Use Tampons</h2>
+            <img src="tampon-removebg-preview-removebg-preview.png" alt="Tampon" class="product-image">
+            <ol>
+                <li data-lang-en="Wash your hands before opening the tampon package." data-lang-es="Lávate las manos antes de abrir el paquete de tampones." data-lang-fr="Lavez-vous les mains avant d'ouvrir l'emballage du tampon.">
+                    <input type="checkbox" id="step1" onchange="updateProgress('tampons')" aria-label="Step 1">
+                    <label for="step1">Wash your hands before opening the tampon package.</label>
+                </li>
+                <li data-lang-en="Sit or stand in a comfortable position." data-lang-es="Siéntate o párate en una posición cómoda." data-lang-fr="Asseyez-vous ou tenez-vous dans une position confortable.">
+                    <input type="checkbox" id="step2" onchange="updateProgress('tampons')" aria-label="Step 2">
+                    <label for="step2">Sit or stand in a comfortable position.</label>
+                </li>
+                <li data-lang-en="Insert the tampon into your vagina at a slight angle." data-lang-es="Inserta el tampón en tu vagina en un ángulo ligero." data-lang-fr="Insérez le tampon dans votre vagin à un léger angle.">
+                    <input type="checkbox" id="step3" onchange="updateProgress('tampons')" aria-label="Step 3">
+                    <label for="step3">Insert the tampon into your vagina at a slight angle.</label>
+                </li>
+                <li data-lang-en="Push the tampon applicator's plunger to release the tampon." data-lang-es="Empuja el émbolo del aplicador del tampón para liberarlo." data-lang-fr="Appuyez sur le piston de l'applicateur de tampon pour libérer le tampon.">
+                    <input type="checkbox" id="step4" onchange="updateProgress('tampons')" aria-label="Step 4">
+                    <label for="step4">Push the tampon applicator's plunger to release the tampon.</label>
+                </li>
+                <li data-lang-en="Dispose of the applicator and wash your hands." data-lang-es="Desecha el aplicador y lávate las manos." data-lang-fr="Jetez l'applicateur et lavez-vous les mains.">
+                    <input type="checkbox" id="step5" onchange="updateProgress('tampons')" aria-label="Step 5">
+                    <label for="step5">Dispose of the applicator and wash your hands.</label>
+                </li>
+            </ol>
+            <div class="progress">
+                <div id="progress-bar-tampons" class="progress-bar"></div>
+            </div>
+        </section>
+
+        <section id="menstrual-cups" class="content-section" style="display: none;">
+            <h2 data-lang-en="How to Use Menstrual Cups" data-lang-es="Cómo usar copas menstruales" data-lang-fr="Comment utiliser les coupes menstruelles">How to Use Menstrual Cups</h2>
+            <img src="menstrual-cup.png" alt="Menstrual Cup" class="product-image">
+            <ol>
+                <li data-lang-en="Wash your hands and the menstrual cup with water and mild soap." data-lang-es="Lávate las manos y la copa menstrual con agua y jabón suave." data-lang-fr="Lavez-vous les mains et la coupe menstruelle avec de l'eau et du savon doux.">
+                    <input type="checkbox" id="step6" onchange="updateProgress('menstrual-cups')" aria-label="Step 1">
+                    <label for="step6">Wash your hands and the menstrual cup with water and mild soap.</label>
+                </li>
+                <li data-lang-en="Fold the menstrual cup and insert it into your vagina." data-lang-es="Dobla la copa menstrual e insértala en tu vagina." data-lang-fr="Pliez la coupe menstruelle et insérez-la dans votre vagin.">
+                    <input type="checkbox" id="step7" onchange="updateProgress('menstrual-cups')" aria-label="Step 2">
+                    <label for="step7">Fold the menstrual cup and insert it into your vagina.</label>
+                </li>
+                <li data-lang-en="Rotate the cup slightly to ensure it has opened fully." data-lang-es="Gira la copa ligeramente para asegurarte de que se haya abierto completamente." data-lang-fr="Tournez légèrement la coupe pour vous assurer qu'elle est bien ouverte.">
+                    <input type="checkbox" id="step8" onchange="updateProgress('menstrual-cups')" aria-label="Step 3">
+                    <label for="step8">Rotate the cup slightly to ensure it has opened fully.</label>
+                </li>
+                <li data-lang-en="Wear the cup for up to 12 hours." data-lang-es="Usa la copa por hasta 12 horas." data-lang-fr="Portez la coupe jusqu'à 12 heures.">
+                    <input type="checkbox" id="step9" onchange="updateProgress('menstrual-cups')" aria-label="Step 4">
+                    <label for="step9">Wear the cup for up to 12 hours.</label>
+                </li>
+                <li data-lang-en="To remove, pinch the base of the cup, pull it out gently, and empty it." data-lang-es="Para quitarla, pellizca la base de la copa, sáquela suavemente y vacíala." data-lang-fr="Pour retirer, pincez la base de la coupe, tirez doucement et videz-la.">
+                    <input type="checkbox" id="step10" onchange="updateProgress('menstrual-cups')" aria-label="Step 5">
+                    <label for="step10">To remove, pinch the base of the cup, pull it out gently, and empty it.</label>
+                </li>
+                <li data-lang-en="Wash the cup and your hands before reinserting or storing it." data-lang-es="Lava la copa y tus manos antes de volver a insertarla o guardarla." data-lang-fr="Lavez la coupe et vos mains avant de la réinsérer ou de la ranger.">
+                    <input type="checkbox" id="step11" onchange="updateProgress('menstrual-cups')" aria-label="Step 6">
+                    <label for="step11">Wash the cup and your hands before reinserting or storing it.</label>
+                </li>
+            </ol>
+            <div class="progress">
+                <div id="progress-bar-menstrual-cups" class="progress-bar"></div>
+            </div>
+        </section>
+
+        <section id="pads" class="content-section" style="display: none;">
+            <h2 data-lang-en="How to Use Pads" data-lang-es="Cómo usar toallas sanitarias" data-lang-fr="Comment utiliser les serviettes hygiéniques">How to Use Pads</h2>
+            <img src="tampon-removebg-preview (1).png" alt="Pad" class="product-image">
+            <ol>
+                <li data-lang-en="Remove the pad from its packaging." data-lang-es="Retira la toalla sanitaria de su empaque." data-lang-fr="Retirez la serviette de son emballage.">
+                    <input type="checkbox" id="step12" onchange="updateProgress('pads')" aria-label="Step 1">
+                    <label for="step12">Remove the pad from its packaging.</label>
+                </li>
+                <li data-lang-en="Peel the adhesive backing off the pad." data-lang-es="Despega la parte adhesiva de la toalla sanitaria." data-lang-fr="Retirez le support adhésif de la serviette.">
+                    <input type="checkbox" id="step13" onchange="updateProgress('pads')" aria-label="Step 2">
+                    <label for="step13">Peel the adhesive backing off the pad.</label>
+                </li>
+                <li data-lang-en="Press the pad onto the inside of your underwear." data-lang-es="Presiona la toalla sanitaria en el interior de tu ropa interior." data-lang-fr="Appuyez la serviette à l'intérieur de votre sous-vêtement.">
+                    <input type="checkbox" id="step14" onchange="updateProgress('pads')" aria-label="Step 3">
+                    <label for="step14">Press the pad onto the inside of your underwear.</label>
+                </li>
+                <li data-lang-en="If the pad has wings, fold them around the edges of your underwear." data-lang-es="Si la toalla sanitaria tiene alas, dóblalas alrededor de los bordes de tu ropa interior." data-lang-fr="Si la serviette a des ailes, pliez-les autour des bords de votre sous-vêtement.">
+                    <input type="checkbox" id="step15" onchange="updateProgress('pads')" aria-label="Step 4">
+                    <label for="step15">If the pad has wings, fold them around the edges of your underwear.</label>
+                </li>
+                <li data-lang-en="Change the pad every 4-6 hours, or as needed." data-lang-es="Cambia la toalla sanitaria cada 4-6 horas, o según sea necesario." data-lang-fr="Changez la serviette toutes les 4-6 heures, ou au besoin.">
+                    <input type="checkbox" id="step16" onchange="updateProgress('pads')" aria-label="Step 5">
+                    <label for="step16">Change the pad every 4-6 hours, or as needed.</label>
+                </li>
+            </ol>
+            <div class="progress">
+                <div id="progress-bar-pads" class="progress-bar"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Menstrual Product Guide</p>
+    </footer>
+
+    <div id="congratulations-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Congratulations!</h2>
+            <p>You've completed all the steps.</p>
+        </div>
+    </div>
+
+    <script src="usage_ins.js"></script>
+    <script>
+        // Function to toggle section visibility
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.style.display = 'block';
+                    section.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        function changeLanguage() {
+            const language = document.getElementById('language').value;
+            const elements = document.querySelectorAll('[data-lang-en]');
+
+            elements.forEach(element => {
+                element.textContent = element.getAttribute(`data-lang-${language}`);
+            });
+        }
+        function updateProgress(sectionId) {
+            const section = document.getElementById(sectionId);
+            const checkboxes = section.querySelectorAll('input[type="checkbox"]');
+            const progressBar = section.querySelector('.progress-bar');
+            const totalSteps = checkboxes.length;
+            let completedSteps = 0;
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    completedSteps++;
+                }
+            });
+
+            const progressPercent = (completedSteps / totalSteps) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+
+            if (progressPercent === 100) {
+                showModal();
+            }
+        }
+
+        function showModal() {
+            const modal = document.getElementById('congratulations-modal');
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('congratulations-modal');
+            modal.style.display = 'none';
+        }
+
+        window.addEventListener('load', () => {
+            updateProgress('tampons');
+            updateProgress('menstrual-cups');
+            updateProgress('pads');
+        });
+    </script>
+</body>
+</html>
