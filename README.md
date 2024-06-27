@@ -39,9 +39,10 @@ The name "LunaWellness" symbolizes our vision of combining the natural rhythms o
 To get started with LunaWellness and run the site locally, follow these steps:
 
 1. *Clone the repository*:
-   bash
+   ```bash
    git clone https://github.com/your-repo/lunaWellness.git
    cd lunaWellness
+   ```
    
 
 2. *Live Server*:
