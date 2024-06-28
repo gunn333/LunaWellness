@@ -1,0 +1,194 @@
+.fade-in-text {
+  position: absolute;
+  top: 47%;
+  transform: translateY(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none; /* Initially disable pointer events */
+  line-height: 1.5;
+}
+
+#leftText {
+  right:60%;
+}
+
+#rightText {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease-in-out;
+}
+
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+#book {
+  width:50vw;
+  height:50vh;
+  position:absolute;
+  left:25vw;
+  top:25vh;
+  perspective:75vw;
+}
+
+#book:before {
+  width:1%;
+  height:100%;
+  background:#222;
+  content:'';
+  position:absolute;
+  left:49%;
+  top:0;
+  box-shadow:0px 10px 10px rgba(0,0,0,.75);
+  outline:1px solid black;
+  padding:0vh ;
+}
+
+.page {
+  width:50%;
+  height:100%;
+  background:radial-gradient(circle at 0% 100%, #777, #ddd 70%);
+  outline:1px solid black;
+  box-shadow:5px 10px 10px rgba(0,0,0,.15);
+  position:absolute;
+  left:50%;
+  top:0;
+  transition:z-index .01s linear 1s, transform 2s linear;
+  transform-origin:0% 50%;
+  z-index:5;
+  cursor:pointer;
+  font-family:monospace;
+  text-align:center;
+  line-height:50vh;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.front, .back {
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;  
+  font-family:monospace;
+  text-align:center;
+  line-height:50vh; 
+  opacity:0;
+  transition:opacity .1s linear 1s;
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Ensure paragraphs stack vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.front p, .back p {
+  font-size: 16px; /* Adjust font size as needed */
+  line-height: 1.5; /* Adjust line height for readability */
+  margin: 0; /* Remove default margins */
+  position:relative;
+  text-align: justify;
+  padding: 0 1em; /* Add padding for readability */
+
+}
+
+.front {
+  opacity:1;
+}
+.back {
+  transform:scaleX(-1);
+}
+
+input {
+  visibility:hidden;
+}
+
+label {
+  width:100%;
+  height:100%;
+  z-index:99;
+  position:absolute;
+  left:0;
+  top:0;
+  margin:0;
+  padding:0;
+}
+
+input:checked + .page {
+  transform:rotateY(-180deg); 
+}
+
+input:checked + .page .front {
+  opacity:0;  
+}
+input:checked + .page .back {
+  opacity:1;  
+}
+
+#ten:checked + .page {
+  z-index:10;
+}
+#nine:checked + .page {
+  z-index:9;
+}
+#eight:checked + .page {
+  z-index:8;
+}
+#seven:checked + .page {
+  z-index:7;
+}
+#six:checked + .page {
+  z-index:6;
+}
+#five:checked + .page {
+  z-index:5;
+}
+#four:checked + .page {
+  z-index:4;
+}
+
+body {
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+  background-color:azure;
+  background-image:linear-gradient(-45deg, tomato, purple);
+}
+
+.page .front, .page .back {
+  background:white;
+  color:black;
+  font-size:2vh;
+  padding:0vh;
+}
+.page .front {
+  text-align:right;
+}
+.page .back {
+  text-align:left;
+}
+
+#page10 .back {
+  font-size:3vh;
+  text-align:center;
+  line-height:50vh;
+  color:magenta;
+}
+#page4 .front{
+  font-size:2.5vh;
+  text-align:center;
+  line-height:50vh;
+  color:blue;
+}
