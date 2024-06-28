@@ -1,0 +1,239 @@
+body {
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f0; /* Light pink background */
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+header {
+    background-color: #ff6699; /* Bright pink header */
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    font-family: cursive;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#themeSwitcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme #themeSwitcher {
+    background-color: #333;
+    color: white;
+}
+
+main {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+body.dark-theme main {
+    background-color: #444;
+}
+
+#intro {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #ffccdd; /* Soft pink for intro section */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+body.dark-theme #intro {
+    background-color: #5c5c5c;
+}
+
+.recommendation {
+    background-color: white;
+    border: 1px solid #ff6699;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, max-height 0.5s ease-in-out;
+    max-height: 300px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+body.dark-theme .recommendation {
+    background-color: #333;
+}
+
+.recommendation:hover {
+    background-color: #ffccdd; /* Soft pink hover effect */
+    transform: translateY(-5px);
+}
+
+body.dark-theme .recommendation:hover {
+    background-color: #555;
+}
+
+.recommendation h2 {
+    color: #ff6699; /* Bright pink heading */
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.recommendation img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.details {
+    display: none;
+    margin-top: 1rem;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+body.dark-theme .details {
+    color: #bbb;
+}
+
+#feedback {
+    background-color: #ffccdd; /* Soft pink for feedback section */
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme #feedback {
+    background-color: #5c5c5c;
+}
+
+#feedback h2 {
+    color: #ff6699; /* Bright pink heading */
+    font-size: 1.5rem;
+}
+
+#feedbackForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#feedbackForm label {
+    font-weight: 600;
+}
+
+#feedbackForm input, 
+#feedbackForm select, 
+#feedbackForm textarea {
+    padding: 0.5rem;
+    border: 1px solid #ff6699;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#feedbackForm input:focus, 
+#feedbackForm select:focus, 
+#feedbackForm textarea:focus {
+    border-color: #ff3366; /* Darker pink for focus */
+    outline: none;
+}
+
+#feedbackForm button {
+    background-color: #ff6699; /* Bright pink button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#feedbackForm button:hover {
+    background-color: #ff3366; /* Darker pink for hover */
+}
+
+#feedbackList {
+    margin-top: 2rem;
+}
+
+#feedbackList h3 {
+    color: #ff6699; /* Bright pink heading */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#feedbackEntries {
+    list-style: none;
+    padding: 0;
+}
+
+#feedbackEntries li {
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #ff6699;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme #feedbackEntries li {
+    background-color: #444;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ff6699; /* Bright pink footer */
+    color: white;
+    margin-top: 2rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
