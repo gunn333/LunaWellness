@@ -1,0 +1,75 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff0f5; /* Light pink background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #ffe4e1; /* Light pink */
+    border: 2px solid #ffccd5; /* Slightly darker pink for borders */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #d6336c; /* Soft red for headings */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #d6336c;
+}
+
+input[type="date"],
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ffccd5;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #d6336c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b02455;
+}
+
+/* Result display */
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background: #ffe4e1;
+    border: 1px solid #ffccd5;
+    border-radius: 5px;
+    color: #333;
+    font-weight: bold;
+}
