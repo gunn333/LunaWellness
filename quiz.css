@@ -1,0 +1,138 @@
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #ffe6e6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease;
+    border: 2px solid #ff6666;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #cc0000;
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 2px solid #ff6666;
+    border-radius: 10px;
+    background-color: #fff0f5;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #cc0000;
+}
+
+.question label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.question label:hover {
+    background-color: #ffcccc;
+    border-radius: 4px;
+}
+
+button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 24px;
+    background-color: #ff6666;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+#resultContainer {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #ffe6e6;
+    font-size: 18px;
+    animation: slideInResult 0.5s ease;
+    border: 2px solid #ff6666;
+}
+
+@keyframes slideInResult {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#feedbackSection {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #fff0f5;
+    border: 2px solid #ff6666;
+}
+
+#feedbackSection h2 {
+    color: #cc0000;
+}
+
+#feedbackForm textarea {
+    width: 97%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ff6666;
+}
+
+#feedbackForm button {
+    margin-top: 10px;
+    background-color: #cc0000;
+}
+
+#feedbackForm button:hover {
+    background-color: #990000;
+}
