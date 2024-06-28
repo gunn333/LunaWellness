@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underwear Recommendations</title>
+    <link rel="stylesheet" href="underwear.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Best Types of Underwear to Wear During Periods</h1>
+        <button id="themeSwitcher">Switch Theme</button>
+    </header>
+
+    <main>
+        <section id="intro">
+            <p>Choosing the right underwear during your period can significantly improve your comfort and hygiene. Here are our top recommendations:</p>
+        </section>
+
+        <section id="recommendations">
+            <div class="recommendation" onclick="toggleDetails(this)">
+                <h2>1. Cotton Underwear</h2>
+                <ul class="details">
+                    <li>Cotton underwear is highly breathable and helps to keep moisture away, reducing the risk of irritation and infections.</li>
+                    <li>Soft and gentle on the skin, reducing irritation.</li>
+                    <li>While not as absorbent as specialized period panties, cotton can still help manage minor leaks and sweat.</li>
+                    <li><strong>Best Brands:</strong> Hanes, Fruit of the Loom, Jockey</li>
+                </ul>
+            </div>
+            <div class="recommendation" onclick="toggleDetails(this)">
+                <h2>2. Period Panties</h2>
+                <ul class="details">
+                    <li>Period panties are specially designed to provide extra protection and absorbency, making them a great option for heavy flow days.</li>
+                    <li>They have multiple layers and are made from materials that prevent leaks and stains.</li>
+                    <li>Made from soft, breathable fabrics, they reduce discomfort and chafing.</li>
+                    <li><strong>Best Brands:</strong> Thinx, Knix, Modibodi</li>
+                </ul>
+            </div>
+            <div class="recommendation" onclick="toggleDetails(this)">
+                <h2>3. Seamless Underwear</h2>
+                <ul class="details">
+                    <li>Seamless underwear prevents visible panty lines and offers a smooth fit, ensuring comfort and confidence during your period.</li>
+                    <li>No seams mean less irritation and chafing, making them comfortable for all-day wear.</li>
+                    <li>They stretch and adapt to body movements, maintaining comfort throughout the day.</li>
+                    <li><strong>Best Brands:</strong> Calvin Klein, Commando, Spanx</li>
+                </ul>
+            </div>
+            <div class="recommendation" onclick="toggleDetails(this)">
+                <h2>4. High-Waisted Underwear</h2>
+                <ul class="details">
+                    <li>High-waisted underwear can provide additional support and coverage, which can be particularly comforting during your period.</li>
+                    <li>They offer extra support around the abdomen, which can be soothing if you're experiencing cramps.</li>
+                    <li>The higher waist can help prevent leaks from the top or sides.</li>
+                    <li><strong>Best Brands:</strong> Hanky Panky, Bali, Vanity Fair</li>
+                </ul>
+            </div>
+            <div class="recommendation" onclick="toggleDetails(this)">
+                <h2>5. Boy Shorts</h2>
+                <ul class="details">
+                    <li>Boy shorts offer full coverage, which helps keep pads in place and provides a sense of security.</li>
+                    <li>The wider sides reduce the risk of chafing and are often more comfortable for extended wear.</li>
+                    <li>They allow for ease of movement and are less likely to bunch up.</li>
+                    <li><strong>Best Brands:</strong> Calvin Klein, Hanes, Victoria's Secret</li>
+                </ul>
+            </div>
+            <div class="recommendation" onclick="toggleDetails(this)">
+                <h2>6. Full Briefs</h2>
+                <ul class="details">
+                    <li>Full briefs provide maximum coverage, reducing the risk of leaks.</li>
+                    <li>They offer good support for pads, making them less likely to shift.</li>
+                    <li>Generally made from soft, breathable fabrics, they are comfortable to wear.</li>
+                    <li><strong>Best Brands:</strong> Sloggi, Chantelle, Warner's</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="feedback">
+            <h2>Share Your Experience</h2>
+            <form id="feedbackForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="recommendation">Favorite Underwear Type:</label>
+                <select id="recommendation" name="recommendation" required>
+                    <option value="cotton">Cotton Underwear</option>
+                    <option value="period-panties">Period Panties</option>
+                    <option value="seamless">Seamless Underwear</option>
+                    <option value="high-waisted">High-Waisted Underwear</option>
+                    <option value="boy-shorts">Boy Shorts</option>
+                    <option value="full-briefs">Full Briefs</option>
+                </select>
+                <label for="feedback">Feedback:</label>
+                <textarea id="Feedback" name="feedback" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="feedbackList">
+                <h3>What Others Are Saying</h3>
+                <ul id="feedbackEntries"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Period Care. All rights reserved.</p>
+    </footer>
+
+    <script src="underwear.js"></script>
+</body>
+</html>
