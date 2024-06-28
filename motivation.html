@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Affirmations</title>
+    <link rel="stylesheet" href="motivation.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Personalized Affirmations and Spiritual Quotes</h1>
+        <form id="preferencesForm">
+            <label for="theme">Choose a theme:</label>
+            <select id="theme" name="theme">
+                <option value="motivation">Motivation</option>
+                <option value="calm">Calm</option>
+                <option value="self-love">Self-love</option>
+                <option value="gratitude">Gratitude</option>
+            </select>
+
+            <label for="emotion">Current emotional state:</label>
+            <select id="emotion" name="emotion">
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="anxious">Anxious</option>
+                <option value="tired">Tired</option>
+            </select>
+
+            <button type="submit">Get Affirmation</button>
+        </form>
+
+        <div id="affirmationResult" class="hidden">
+            <h2>Your Affirmation</h2>
+            <p id="affirmationText"></p>
+            <img id="affirmationImage" src="" alt="Affirmation Image" class="hidden">
+        </div>
+    </div>
+
+    <script src="motivation.js"></script>
+</body>
+</html>
+
